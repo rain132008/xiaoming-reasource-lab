@@ -821,6 +821,32 @@ img {
   gap: 14px;
 }
 
+.detail-mini-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -8px 0 26px;
+}
+
+.detail-mini-list span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: #356154;
+  background: #ecfbf6;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.inline-error {
+  margin: 0;
+  color: #c2410c;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .primary-action,
 .secondary-action,
 .access-card button,
@@ -1161,6 +1187,13 @@ img {
   display: inline-flex;
   align-items: center;
   margin-top: 12px;
+}
+
+.compact-empty {
+  min-height: 220px;
+  border: 1px solid #e8eef7;
+  border-radius: 18px;
+  background: #fbfdff;
 }
 
 @media (max-width: 1100px) {

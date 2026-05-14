@@ -1,39 +1,84 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { getRelatedResources, getResourceBySlug } from '../data/resources';
+import { accessResource, getResourceDetail, PublicResource } from '../services/resources';
 
 const route = useRoute();
-const RESOURCE_SHARE_URL = 'https://pan.quark.cn/s/5cbe470eb035';
+const resource = ref<PublicResource | null>(null);
+const relatedResources = ref<PublicResource[]>([]);
+const loading = ref(true);
+const errorMessage = ref('');
+const opening = ref(false);
 
-const resource = computed(() => getResourceBySlug(String(route.params.slug)));
-const relatedResources = computed(() => (resource.value ? getRelatedResources(resource.value) : []));
+async function loadResource() {
+  const slug = String(route.params.slug || '');
+  if (!slug) return;
 
-function openResource() {
-  if (!resource.value) return;
-  window.open(RESOURCE_SHARE_URL, '_blank', 'noopener,noreferrer');
+  loading.value = true;
+  errorMessage.value = '';
+  resource.value = null;
+  relatedResources.value = [];
+
+  try {
+    const data = await getResourceDetail(slug);
+    resource.value = data.resource;
+    relatedResources.value = data.related;
+  } catch (error) {
+    errorMessage.value = error instanceof Error ? error.message : '资源加载失败';
+  } finally {
+    loading.value = false;
+  }
 }
+
+async function openResource() {
+  if (!resource.value || opening.value) return;
+  opening.value = true;
+  errorMessage.value = '';
+
+  try {
+    const data = await accessResource(resource.value.slug);
+    window.open(data.url, '_blank', 'noopener,noreferrer');
+  } catch (error) {
+    errorMessage.value = error instanceof Error ? error.message : '获取资料链接失败';
+  } finally {
+    opening.value = false;
+  }
+}
+
+onMounted(loadResource);
+watch(() => route.params.slug, loadResource);
 </script>
 
 <template>
-  <main v-if="resource" class="simple-detail-page">
+  <main v-if="loading" class="empty-page">
+    <h1>资料加载中</h1>
+    <p>正在从数据库读取资源详情。</p>
+  </main>
+
+  <main v-else-if="resource" class="simple-detail-page">
     <RouterLink class="back-link" to="/">返回首页</RouterLink>
 
     <section class="simple-detail-card">
       <div class="simple-detail-copy">
         <div class="detail-tags">
           <span>{{ resource.category }}</span>
-          <span>{{ resource.type }} · {{ resource.size }}</span>
+          <span>{{ resource.type || '资料' }} · {{ resource.size || '持续更新' }}</span>
         </div>
         <h1>{{ resource.title }}</h1>
         <p>{{ resource.description }}</p>
-        <div class="detail-actions">
-          <button class="primary-action" type="button" @click="openResource">免费获取资料</button>
+        <div v-if="resource.contentSummary.length" class="detail-mini-list">
+          <span v-for="item in resource.contentSummary.slice(0, 4)" :key="item">{{ item }}</span>
         </div>
+        <div class="detail-actions">
+          <button class="primary-action" type="button" :disabled="opening" @click="openResource">
+            {{ opening ? '正在打开...' : '免费获取资料' }}
+          </button>
+        </div>
+        <p v-if="errorMessage" class="inline-error">{{ errorMessage }}</p>
       </div>
 
       <div class="simple-preview">
-        <img :src="resource.coverIcon" :alt="resource.title" />
+        <img :src="resource.coverIcon || '/assets/icon-wish-clean.svg'" :alt="resource.title" />
         <div>
           <span>资料预览</span>
           <strong>{{ resource.title }}</strong>
@@ -56,7 +101,7 @@ function openResource() {
 
   <main v-else class="empty-page">
     <h1>没有找到这份资料</h1>
-    <p>资源可能已下架，或者链接地址不完整。</p>
+    <p>{{ errorMessage || '资源可能已下架，或者链接地址不完整。' }}</p>
     <RouterLink to="/">回到首页</RouterLink>
   </main>
 </template>
