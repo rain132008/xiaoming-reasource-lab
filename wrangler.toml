@@ -1,9 +1,10 @@
 name = "resource-share-site"
+account_id = "e4809a9a44f835eb88958b288971fad3"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-05-14"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "resource-share-db"
-database_id = "replace-with-cloudflare-d1-database-id"
+database_id = "1254aeac-079c-4c26-bc6e-8e823db65399"
 migrations_dir = "migrations"
