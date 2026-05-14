@@ -1,32 +1,23 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { getRelatedResources, getResourceBySlug } from '../data/resources';
 
 const route = useRoute();
-const copied = ref(false);
+const RESOURCE_SHARE_URL = 'https://pan.quark.cn/s/5cbe470eb035';
 
 const resource = computed(() => getResourceBySlug(String(route.params.slug)));
 const relatedResources = computed(() => (resource.value ? getRelatedResources(resource.value) : []));
 
 function openResource() {
   if (!resource.value) return;
-  window.open(resource.value.quarkUrl, '_blank', 'noopener,noreferrer');
-}
-
-async function copyResourceLink() {
-  if (!resource.value) return;
-  await navigator.clipboard.writeText(resource.value.quarkUrl);
-  copied.value = true;
-  window.setTimeout(() => {
-    copied.value = false;
-  }, 1800);
+  window.open(RESOURCE_SHARE_URL, '_blank', 'noopener,noreferrer');
 }
 </script>
 
 <template>
   <main v-if="resource" class="simple-detail-page">
-    <RouterLink class="back-link" to="/">← 返回首页</RouterLink>
+    <RouterLink class="back-link" to="/">返回首页</RouterLink>
 
     <section class="simple-detail-card">
       <div class="simple-detail-copy">
@@ -38,9 +29,6 @@ async function copyResourceLink() {
         <p>{{ resource.description }}</p>
         <div class="detail-actions">
           <button class="primary-action" type="button" @click="openResource">免费获取资料</button>
-          <button class="secondary-action" type="button" @click="copyResourceLink">
-            {{ copied ? '已复制' : '复制链接' }}
-          </button>
         </div>
       </div>
 
@@ -57,7 +45,7 @@ async function copyResourceLink() {
     <section v-if="relatedResources.length" class="simple-related">
       <h2>相关资料</h2>
       <div class="simple-related-list">
-        <RouterLink v-for="item in relatedResources.slice(0, 3)" :key="item.slug" :to="`/resource/${item.slug}`">
+        <RouterLink v-for="item in relatedResources" :key="item.slug" :to="`/resource/${item.slug}`">
           {{ item.title }}
         </RouterLink>
       </div>

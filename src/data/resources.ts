@@ -36,7 +36,7 @@ export const resources: ResourceDetail[] = [
     views: 368,
     downloads: 126,
     coverClass: 'cover-green',
-    coverIcon: '/assets/icon-cap.png',
+    coverIcon: '/assets/icon-cap-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-kaoyan-english',
     highlights: ['真题逐题解析', '长难句拆解', '作文模板和范文', '适合二刷复盘'],
     contents: ['2024 年英语二完整试题', '阅读理解逐题解析', '翻译长难句标注', '小作文与大作文范文', '错题复盘表'],
@@ -58,7 +58,7 @@ export const resources: ResourceDetail[] = [
     views: 534,
     downloads: 218,
     coverClass: 'cover-blue',
-    coverIcon: '/assets/icon-headset.png',
+    coverIcon: '/assets/icon-headset-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-ielts-speaking',
     highlights: ['Part1-3 分类整理', '高频话题答案框架', '自然表达替换', '考前速查清单'],
     contents: ['人物类话题题库', '地点类话题题库', '经历类话题题库', 'Part3 延展讨论句型', '常见卡顿表达替换'],
@@ -80,7 +80,7 @@ export const resources: ResourceDetail[] = [
     views: 862,
     downloads: 304,
     coverClass: 'cover-dark',
-    coverIcon: '/assets/icon-ai.png',
+    coverIcon: '/assets/icon-ai-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-midjourney-guide',
     highlights: ['提示词结构模板', '常用参数速查', '风格关键词库', '案例反推练习'],
     contents: ['基础指令说明', '提示词四段式模板', '商业海报案例', '人物头像案例', '常用风格和材质词'],
@@ -102,7 +102,7 @@ export const resources: ResourceDetail[] = [
     views: 452,
     downloads: 177,
     coverClass: 'cover-orange',
-    coverIcon: '/assets/icon-report.png',
+    coverIcon: '/assets/icon-report-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-office-ppt',
     highlights: ['多套版式组合', '目录和过渡页齐全', '图表页可直接替换', '适合职场汇报'],
     contents: ['年度述职模板', '项目复盘模板', '数据图表页', '团队介绍页', '时间轴与里程碑页'],
@@ -124,7 +124,7 @@ export const resources: ResourceDetail[] = [
     views: 286,
     downloads: 91,
     coverClass: 'cover-blue',
-    coverIcon: '/assets/icon-book.png',
+    coverIcon: '/assets/icon-book-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-primary-math',
     highlights: [],
     contents: [],
@@ -146,7 +146,7 @@ export const resources: ResourceDetail[] = [
     views: 344,
     downloads: 103,
     coverClass: 'cover-green',
-    coverIcon: '/assets/icon-book.png',
+    coverIcon: '/assets/icon-book-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-english-writing',
     highlights: [],
     contents: [],
@@ -168,7 +168,7 @@ export const resources: ResourceDetail[] = [
     views: 198,
     downloads: 67,
     coverClass: 'cover-orange',
-    coverIcon: '/assets/icon-book.png',
+    coverIcon: '/assets/icon-book-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-sync-practice',
     highlights: [],
     contents: [],
@@ -190,7 +190,7 @@ export const resources: ResourceDetail[] = [
     views: 516,
     downloads: 188,
     coverClass: 'cover-dark',
-    coverIcon: '/assets/icon-ai.png',
+    coverIcon: '/assets/icon-ai-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-prompt-handbook',
     highlights: [],
     contents: [],
@@ -212,7 +212,7 @@ export const resources: ResourceDetail[] = [
     views: 608,
     downloads: 221,
     coverClass: 'cover-blue',
-    coverIcon: '/assets/icon-ai.png',
+    coverIcon: '/assets/icon-ai-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-ai-tools',
     highlights: [],
     contents: [],
@@ -234,7 +234,7 @@ export const resources: ResourceDetail[] = [
     views: 421,
     downloads: 143,
     coverClass: 'cover-blue',
-    coverIcon: '/assets/icon-headset.png',
+    coverIcon: '/assets/icon-headset-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-ielts-writing',
     highlights: [],
     contents: [],
@@ -256,7 +256,7 @@ export const resources: ResourceDetail[] = [
     views: 377,
     downloads: 119,
     coverClass: 'cover-green',
-    coverIcon: '/assets/icon-headset.png',
+    coverIcon: '/assets/icon-headset-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-ielts-listening',
     highlights: [],
     contents: [],
@@ -278,7 +278,7 @@ export const resources: ResourceDetail[] = [
     views: 254,
     downloads: 82,
     coverClass: 'cover-orange',
-    coverIcon: '/assets/icon-cap.png',
+    coverIcon: '/assets/icon-cap-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-politics-points',
     highlights: [],
     contents: [],
@@ -300,7 +300,7 @@ export const resources: ResourceDetail[] = [
     views: 339,
     downloads: 128,
     coverClass: 'cover-dark',
-    coverIcon: '/assets/icon-cap.png',
+    coverIcon: '/assets/icon-cap-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-math-formulas',
     highlights: [],
     contents: [],
@@ -322,7 +322,7 @@ export const resources: ResourceDetail[] = [
     views: 490,
     downloads: 210,
     coverClass: 'cover-green',
-    coverIcon: '/assets/icon-report.png',
+    coverIcon: '/assets/icon-report-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-excel-functions',
     highlights: [],
     contents: [],
@@ -344,7 +344,7 @@ export const resources: ResourceDetail[] = [
     views: 302,
     downloads: 116,
     coverClass: 'cover-blue',
-    coverIcon: '/assets/icon-report.png',
+    coverIcon: '/assets/icon-report-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-work-review',
     highlights: [],
     contents: [],
@@ -366,7 +366,7 @@ export const resources: ResourceDetail[] = [
     views: 771,
     downloads: 288,
     coverClass: 'cover-orange',
-    coverIcon: '/assets/icon-wish.png',
+    coverIcon: '/assets/icon-wish-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-xhs-title',
     highlights: [],
     contents: [],
@@ -388,7 +388,7 @@ export const resources: ResourceDetail[] = [
     views: 698,
     downloads: 245,
     coverClass: 'cover-dark',
-    coverIcon: '/assets/icon-wish.png',
+    coverIcon: '/assets/icon-wish-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-ai-video-script',
     highlights: [],
     contents: [],
@@ -410,7 +410,7 @@ export const resources: ResourceDetail[] = [
     views: 415,
     downloads: 152,
     coverClass: 'cover-green',
-    coverIcon: '/assets/icon-wish.png',
+    coverIcon: '/assets/icon-wish-clean.svg',
     quarkUrl: 'https://pan.quark.cn/mock-side-project',
     highlights: [],
     contents: [],
@@ -424,8 +424,38 @@ export function getResourceBySlug(slug: string) {
   return resources.find((resource) => resource.slug === slug);
 }
 
+const RELATED_RESOURCE_LIMIT = 3;
+
+function byNewestAndPopular(a: ResourceDetail, b: ResourceDetail) {
+  const dateScore = new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+  return dateScore || b.views - a.views;
+}
+
 export function getRelatedResources(resource: ResourceDetail) {
-  return resource.relatedSlugs
-    .map((slug) => getResourceBySlug(slug))
-    .filter((item): item is ResourceDetail => Boolean(item));
+  const picked = new Map<string, ResourceDetail>();
+
+  function add(item: ResourceDetail | undefined) {
+    if (!item || item.slug === resource.slug || picked.has(item.slug)) return;
+    picked.set(item.slug, item);
+  }
+
+  resource.relatedSlugs.map((slug) => getResourceBySlug(slug)).forEach(add);
+
+  resources
+    .filter((item) => item.category === resource.category)
+    .sort(byNewestAndPopular)
+    .forEach(add);
+
+  resources
+    .filter((item) => item.tags.some((tag) => resource.tags.includes(tag)))
+    .sort((a, b) => {
+      const aMatches = a.tags.filter((tag) => resource.tags.includes(tag)).length;
+      const bMatches = b.tags.filter((tag) => resource.tags.includes(tag)).length;
+      return bMatches - aMatches || byNewestAndPopular(a, b);
+    })
+    .forEach(add);
+
+  resources.slice().sort(byNewestAndPopular).forEach(add);
+
+  return Array.from(picked.values()).slice(0, RELATED_RESOURCE_LIMIT);
 }

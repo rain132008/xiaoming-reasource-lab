@@ -1,0 +1,9 @@
+name = "resource-share-site"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-05-14"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "resource-share-db"
+database_id = "replace-with-cloudflare-d1-database-id"
+migrations_dir = "migrations"
